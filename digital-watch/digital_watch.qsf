@@ -368,22 +368,30 @@ set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity D
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity DE0_NANO -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity DE0_NANO -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -entity DE0_NANO -section_id Top
-set_location_assignment PIN_D3 -to Ao
-set_global_assignment -name VHDL_FILE CI_4511.vhd
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Ao
-set_location_assignment PIN_C3 -to Bo
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Bo
-set_location_assignment PIN_A2 -to Co
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Co
-set_location_assignment PIN_A3 -to Do
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Do
-set_location_assignment PIN_B3 -to Eo
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Eo
-set_location_assignment PIN_B4 -to Fo
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Fo
-set_location_assignment PIN_A4 -to Go
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Go
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
 set_location_assignment PIN_J15 -to key
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to key
+set_global_assignment -name VHDL_FILE digital_watch.vhd
+set_global_assignment -name VHDL_FILE counter_BCD.vhd
+set_global_assignment -name VHDL_FILE clock_divisor.vhd
+set_global_assignment -name VHDL_FILE clock_60hz.vhd
+set_global_assignment -name VHDL_FILE CI_4511.vhd
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_location_assignment PIN_D3 -to hour_dec[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hour_dec[0]
+set_location_assignment PIN_C3 -to hour_dec[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hour_dec[1]
+set_location_assignment PIN_A2 -to hour_dec[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hour_dec[2]
+set_location_assignment PIN_A3 -to hour_dec[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hour_dec[3]
+set_location_assignment PIN_B3 -to hour_dec[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hour_dec[4]
+set_location_assignment PIN_B4 -to hour_dec[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hour_dec[5]
+set_location_assignment PIN_A4 -to hour_dec[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hour_dec[6]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

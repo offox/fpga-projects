@@ -1,0 +1,23 @@
+# I used to development Quartus II
+# The files listed above used is automatic created by Quartus II.
+
+# Ignore files
+*.rdb
+*.db_info
+*.ipinfo
+*.qmsg
+*.hdb
+*.ddb
+*.sci
+*.txt
+*.rpt
+*.summary
+*.dat
+*.bak
+*.swp
+*.qws
+
+# Ignore directories
+db/
+incremental_db/
+simulation/
