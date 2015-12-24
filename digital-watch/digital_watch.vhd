@@ -3,22 +3,41 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
---top module(full adder) entity declaration
 entity digital_watch is
-port ( --Ai, Bi, Ci, Di : in std_logic;
-		variabkey :	in std_logic;
+port (key :	in std_logic;
       hour_dec : out std_logic_vector(6 downto 0);
 		hour_uni : out std_logic_vector(6 downto 0);
 		min_dec : out std_logic_vector(6 downto 0);
 		min_uni : out std_logic_vector(6 downto 0));
 end digital_watch;
- --top module architecture declaration.
+
+architecture struct of digital_watch is
+		component CI_4511 is 
+		port (
+		intput : in std_logic_vector(3 downto 0) := (others => '1'); 
+		output : out std_logic_vector(6 downto 0) := (others => '1')
+		);
+		--Ai: in std_logic; 
+		--		Bi: in std_logic; 
+		--		Ci: in std_logic; 
+		--		Di: in std_logic;
+		--		Ao: out std_logic; 
+		--		Bo: out std_logic; 
+		--		Co: out std_logic; 
+		--		Do: out std_logic; 
+		--		Eo: out std_logic; 
+		--		Fo: out std_logic; 
+		--		Go: out std_logic
+		--);
+		end component;
+		
+begin 
+	HA1: CI_4511 port map (output=>min_uni);
+
+end struct;
+
 architecture behavior of digital_watch is
---signal s1,c1,c2 : std_logic:='0';
-signal Ai, Bi, Ci, Di : std_logic:='0';
-attribute altera_chip_pin_lc of hour_dec : signal is "Ao, Bo, Co, Do, Eo, Fo, Go"; 
 begin
---instantiate and do port map for the first half adder.
 	process (key)
 	begin 
 		if (key = '0') then
@@ -29,6 +48,4 @@ begin
 			Bi <= '0';
 		end if;
 	end process;
-HA1 : entity work.CI_4511 port map(Ai, Bi, Ci, Di, Ao, Bo, Co, Do, Eo, Fo, Go);
---instantiate and do port map for the second half adder.
 end;
